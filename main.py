@@ -22,11 +22,11 @@ from utils import DrawText
 load_prc_file_data("", """
     textures-power-2 none
     gl-coordinate-system default
-    window-title Panda3D Avoid Balls
+    window-title Panda3D Simulation Environment
     filled-wireframe-apply-shader true
     stm-max-views 8
-    stm-max-chunk-count 2048""")
-
+    stm-max-chunk-count 2048
+""")
 
 class Status(Enum):
 
@@ -214,7 +214,7 @@ class Screen(NodePath):
         self.reparent_to(base.render2d)
         self.set_color(self.bg)
         self.switch_screens()
-        self.title.setText('Avoid Balls')
+        self.title.setText('Panda3D Simulation Environment')
 
     def show_switch_screen(self):
         self.title.setText('Change the terrain')

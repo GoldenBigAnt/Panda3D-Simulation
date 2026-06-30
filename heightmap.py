@@ -84,7 +84,7 @@ class HeightMap:
         self.tile_size = 256
         self.tiles = [tile for tile in self.get_tiles()]
 
-        dirs = [p for p in Path(FolderPath.terrains).glob('**') if re.search(r'\d+_\d+', str(p))]
+        dirs = [ p for p in Path(FolderPath.terrains).glob("*") if p.is_dir() and re.fullmatch(r"\d+_\d+", p.name) ]
         random.shuffle(dirs)
         self.dirs = cycle(dirs)
 
